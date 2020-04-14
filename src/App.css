@@ -24,7 +24,8 @@
 label,
 input {
   display: block;
-  padding-bottom: 0.5rem;
+  padding: 0.25rem;
+  width: 90%;
 }
 
 textarea {
