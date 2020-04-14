@@ -48,6 +48,7 @@ export default function About() {
           tool above to test the snippet . If the schema comes back without any
           errors. Add the schema to the head of the target site.
         </li>
+        <li>Retest original url after you have added the schema.</li>
       </ul>
     </div>
   );
