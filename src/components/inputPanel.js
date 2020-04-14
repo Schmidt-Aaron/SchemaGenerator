@@ -26,6 +26,7 @@ export default function InputPanel(props) {
 
   return (
     <div className="panel">
+      <h3>Inputs:</h3>
       <form>
         <label htmlFor="announcementName">Name of Announcement</label>
         <input
@@ -114,6 +115,9 @@ export default function InputPanel(props) {
         <label htmlFor="City">City</label>
         <input type="text" name="city" value={city} onChange={handleChange} />
 
+        <label htmlFor="state">State / Region(non-US)</label>
+        <input type="text" name="state" value={state} onChange={handleChange} />
+
         <label htmlFor="Zip Code">Zip Code</label>
         <input
           type="text"
@@ -121,9 +125,6 @@ export default function InputPanel(props) {
           value={zipCode}
           onChange={handleChange}
         />
-
-        <label htmlFor="State/Region">State / Region(non-US)</label>
-        <input type="text" name="state" value={state} onChange={handleChange} />
 
         <label htmlFor="Country">Country</label>
         <input

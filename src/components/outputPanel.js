@@ -24,6 +24,7 @@ export default function OutputPanel(props) {
 
   return (
     <div className="panel">
+      <h3>Output Field:</h3>
       <code>
         <p>{`<script type="application/ld+json">`}</p>
         <p>{`{`}</p>
@@ -82,10 +83,10 @@ export default function OutputPanel(props) {
           {`"addressLocality"`}: {`"${city}",`}
         </p>
         <p>
-          {`"postalCode"`}: {`"${zipCode}",`}
+          {`"addressRegion"`}: {`"${state}",`}
         </p>
         <p>
-          {`"addressRegion"`}: {`"${state}",`}
+          {`"postalCode"`}: {`"${zipCode}",`}
         </p>
         <p>
           {`"addressCountry"`}: {`"${country}"`}
