@@ -25,6 +25,7 @@ export default function About() {
           Bing
         </a>
       </p>
+      <p>*Please note that this tool is in the early stages of development.*</p>
       <h2>Instructions</h2>
       <ul>
         <li>

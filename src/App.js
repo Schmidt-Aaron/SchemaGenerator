@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <h1>Special Announcement Schema Generator</h1>
+        <h1>Special Announcement Schema Generator *WIP*</h1>
       </header>
       <main className="main">
         <About />

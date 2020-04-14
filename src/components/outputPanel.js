@@ -56,7 +56,7 @@ export default function OutputPanel(props) {
           {`"@type"`}: {`"LocalBusiness",`}
         </p>
         <p>
-          {`"name"`}: {`"${businessName}",`}
+          {`"name"`}:{`"${businessName}",`}
         </p>
         <p>
           {`"telephone"`}: {`"${telephone}",`}
@@ -95,27 +95,6 @@ export default function OutputPanel(props) {
         <p>{`}`}</p>
         <p>{`}`}</p>
         <p>{`</script>`}</p>
-        {/* 
-          
-          "text"\u003A "We may not be able to see you in person but we are still here for you. While we obviously cannot deliver hands-on care remotely, there are many things that can be done to alleviate your pain or discomfort so you can feel like your best physical self.",
-          "datePosted"\u003A "2020-04-01T08\u003A00",
-          "category"\u003A "https\u003A//www.wikidata.org/wiki/Q81068910",
-          "announcementLocation"\u003A {
-            "@type"\u003A "LocalBusiness",
-            "name"\u003A "Broadmead Orthopaedic Physiotherapy Clinic",
-            "image" \u003A "https\u003A//www.broadmeadphysiotherapy.com/wp-content/uploads/2018/10/broadmead-physiotherapy-victoria.png",
-            "url"\u003A "https\u003A//www.broadmeadphysiotherapy.com/covid-19-update/",
-            "address"\u003A {
-              "@type"\u003A "PostalAddress",
-              "streetAddress"\u003A "4420 Chatterton Way #102",
-              "addressLocality"\u003A "Victoria",
-              "postalCode"\u003A "V8X 5J2",
-              "addressRegion"\u003A "BC",
-              "addressCountry"\u003A "CA"
-            }
-          }
-        } */}
-        {/* </script> */}
       </code>
     </div>
   );
