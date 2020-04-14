@@ -7,17 +7,21 @@ import { SAProvider } from "./context/specialAnnouncement";
 
 function App() {
   const initialState = {
-    announcementName: "Greetings",
-    announcementText: "Test text field goes here",
-    datePosted: "test",
-    dateExpires: "expired",
-    businessName: "name",
-    businessURL: "URL",
-    streetAddress: "street name",
+    announcementName: "[business name] Covid-19 Operating Hours",
+    announcementText:
+      "We remain open and dedicated to serving our customers during this time. We are following all pertinent CDC protocols.",
+    datePosted: "[date]",
+    dateExpires: "expires at [date]",
+    businessName: "business name",
+    priceRange: "$-$$$$",
+    telephone: "555-123-4567",
+    businessImage: "logo URL",
+    businessURL: "website URL",
+    streetAddress: "street address",
     city: "city",
     zipCode: "zip",
     state: "state",
-    Country: "USA",
+    country: "USA",
   };
 
   const [announcement, setAnnouncement] = useState(initialState);

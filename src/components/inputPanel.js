@@ -7,13 +7,17 @@ export default function InputPanel(props) {
     datePosted,
     dateExpires,
     businessName,
+    telephone,
+    priceRange,
     businessURL,
+    businessImage,
     streetAddress,
     city,
     zipCode,
     state,
-    Country,
+    country,
   } = props.values;
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -34,6 +38,7 @@ export default function InputPanel(props) {
         <label htmlFor="announcementText">Announcement Text</label>
         <textarea
           type="text"
+          rows={4}
           name="announcementText"
           value={announcementText}
           onChange={handleChange}
@@ -54,7 +59,7 @@ export default function InputPanel(props) {
           value={dateExpires}
           onChange={handleChange}
         />
-
+        {/* Only use if need to toggle between local business and civic structure */}
         {/* <label htmlFor="type">Local Business vs Civic Structure</label>
         <input type="text" name="type" value={} onChange={handleChange} /> */}
 
@@ -66,10 +71,34 @@ export default function InputPanel(props) {
           onChange={handleChange}
         />
 
+        <label htmlFor="telephone">Phone Number</label>
+        <input
+          type="text"
+          name="telephone"
+          value={telephone}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="priceRange">Price Range</label>
+        <input
+          type="text"
+          name="priceRange"
+          value={priceRange}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="businessImage">Business Image (URL)</label>
+        <input
+          type="text"
+          name="businessImage"
+          value={businessImage}
+          onChange={handleChange}
+        />
+
         <label htmlFor="Business URL">Business URL</label>
         <input
           type="text"
-          name="Business URL"
+          name="businessURL"
           value={businessURL}
           onChange={handleChange}
         />
@@ -77,35 +106,30 @@ export default function InputPanel(props) {
         <label htmlFor="Street Address">Street Address</label>
         <input
           type="text"
-          name="Street Address"
+          name="streetAddress"
           value={streetAddress}
           onChange={handleChange}
         />
 
         <label htmlFor="City">City</label>
-        <input type="text" name="City" value={city} onChange={handleChange} />
+        <input type="text" name="city" value={city} onChange={handleChange} />
 
         <label htmlFor="Zip Code">Zip Code</label>
         <input
           type="text"
-          name="Zip Code"
+          name="zipCode"
           value={zipCode}
           onChange={handleChange}
         />
 
         <label htmlFor="State/Region">State / Region(non-US)</label>
-        <input
-          type="text"
-          name="State/Region"
-          value={state}
-          onChange={handleChange}
-        />
+        <input type="text" name="state" value={state} onChange={handleChange} />
 
         <label htmlFor="Country">Country</label>
         <input
           type="text"
-          name="Country"
-          value={Country}
+          name="country"
+          value={country}
           onChange={handleChange}
         />
       </form>
