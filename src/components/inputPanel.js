@@ -45,7 +45,7 @@ export default function InputPanel(props) {
           onChange={handleChange}
         />
 
-        <label htmlFor="datePosted">Posted Date</label>
+        <label htmlFor="datePosted">Posted Date (MM-DD-YYYY)</label>
         <input
           type="text"
           name="datePosted"
@@ -53,7 +53,7 @@ export default function InputPanel(props) {
           onChange={handleChange}
         />
 
-        <label htmlFor="dateExpires">Expiration Date</label>
+        <label htmlFor="dateExpires">Expiration Date (MM-DD-YYYY)</label>
         <input
           type="text"
           name="dateExpires"

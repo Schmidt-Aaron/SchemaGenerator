@@ -44,7 +44,7 @@ function App() {
           </SAProvider>
         </section>
       </main>
-      <p>
+      <p className="attribution">
         This tool was developed by Aaron Schmidt and is a work in progress.
         Feedback and/or bug reports are appreciated.
       </p>
