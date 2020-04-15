@@ -1,8 +1,8 @@
 # SchemaGenerator
 
-A bare bones JSON+LD schema generator for the (Special Announcement)[https://developers.google.com/search/docs/data-types/special-announcements] schema.
+A bare bones JSON+LD schema generator for the [Special Announcement](https://developers.google.com/search/docs/data-types/special-announcements) schema.
 
-Check out the (live version)[https://dreamy-pike-423300.netlify.com/].
+Check out the [live version](https://dreamy-pike-423300.netlify.com/).
 
 ## TODO
 
