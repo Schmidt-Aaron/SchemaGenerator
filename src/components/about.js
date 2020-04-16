@@ -9,7 +9,11 @@ export default function About() {
         the new Special Announcement Schema that was rolled out as a response to
         the Covid pandemic. If you are unfamiliar with structured data and it's
         implementation then I suggest you check out the{" "}
-        <a href="https://developers.google.com/search/docs/guides/intro-structured-data">
+        <a
+          href="https://developers.google.com/search/docs/guides/intro-structured-data"
+          target="_blank"
+          rel="noopener norefferal"
+        >
           Google documentation
         </a>{" "}
         to get up-to-speed.
@@ -17,11 +21,19 @@ export default function About() {
       <p>
         You can read more about the Special Announcement schema in the
         documentation from{" "}
-        <a href="https://developers.google.com/search/docs/data-types/special-announcements">
+        <a
+          href="https://developers.google.com/search/docs/data-types/special-announcements"
+          target="_blank"
+          rel="noopener norefferal"
+        >
           Google
         </a>
         , or{" "}
-        <a href="https://www.bing.com/webmaster/help/special-announcement-specifications-5cbd6249">
+        <a
+          href="https://www.bing.com/webmaster/help/special-announcement-specifications-5cbd6249"
+          target="_blank"
+          rel="noopener norefferal"
+        >
           Bing
         </a>
       </p>
@@ -33,7 +45,11 @@ export default function About() {
       <ul>
         <li>
           Obtain the current schema data from the site using{" "}
-          <a href="https://search.google.com/structured-data/testing-tool/u/0/">
+          <a
+            href="https://search.google.com/structured-data/testing-tool/u/0/"
+            target="_blank"
+            rel="noopener norefferal"
+          >
             Structured Data Testing Tool
           </a>
           . This is to ensure consistent schema data.
