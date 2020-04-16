@@ -51,3 +51,7 @@ textarea {
 code p {
   margin: 0.75rem 0;
 }
+
+p {
+  word-break: break-all;
+}
