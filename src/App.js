@@ -9,9 +9,9 @@ function App() {
   const initialState = {
     announcementName: "[business name] Covid-19 Operating Hours",
     announcementText:
-      "We remain open and dedicated to serving our customers during this time. We are following all pertinent CDC protocols.",
+      "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees are our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
     datePosted: "[date]",
-    dateExpires: "expires at [date]",
+    dateExpires: "[date]",
     businessName: "business name",
     priceRange: "$-$$$$",
     telephone: "555-123-4567",
