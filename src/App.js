@@ -9,7 +9,7 @@ function App() {
   const initialState = {
     announcementName: "[business name] Covid-19 Operating Hours",
     announcementText:
-      "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees are our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
+      "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees is our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
     datePosted: "[date]",
     dateExpires: "[date]",
     businessName: "business name",
@@ -46,7 +46,10 @@ function App() {
       </main>
       <p className="attribution">
         This tool was developed by Aaron Schmidt and is a work in progress.
-        Feedback and/or bug reports are appreciated.
+        Feedback and/or bug reports are appreciated.{" "}
+        <a href="https://github.com/Schmidt-Aaron/SchemaGenerator">
+          Source Code
+        </a>
       </p>
     </div>
   );

@@ -35,3 +35,19 @@ textarea {
 .attribution {
   text-align: center;
 }
+
+.indent-1 {
+  margin-left: 1rem;
+}
+
+.indent-2 {
+  margin-left: 2rem;
+}
+
+.indent-3 {
+  margin-left: 3rem;
+}
+
+code p {
+  margin: 0.75rem 0;
+}

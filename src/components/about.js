@@ -42,7 +42,10 @@ export default function About() {
           Copy over all pertinent data fields from the current schema into this
           tool.
         </li>
-        <li>Fill in any remaining fields</li>
+        <li>
+          Fill in any remaining fields. The provided text is just an example. I
+          encourage you to customize as needed for your use-case.
+        </li>
         <li>
           Cut and paste the completed schema from the output field then use the
           tool above to test the snippet . If the schema comes back without any
