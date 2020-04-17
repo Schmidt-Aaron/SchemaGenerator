@@ -67,7 +67,19 @@ export default function About() {
           tool above to test the snippet . If the schema comes back without any
           errors. Add the schema to the head of the target site.
         </li>
-        <li>Retest original url after you have added the schema.</li>
+        <li>
+          Retest original url after you have added the schema. Note: if you used
+          Google Tag Manager to place the schema then it might not show up with
+          the tool above. If that is the case try Google's{" "}
+          <a
+            href="https://search.google.com/test/rich-results"
+            target="_blank"
+            rel="noopener norefferal"
+          >
+            Rich Results Test
+          </a>{" "}
+          tool to test your implementation.{" "}
+        </li>
       </ul>
     </div>
   );
