@@ -12,7 +12,7 @@ export default function About() {
         <a
           href="https://developers.google.com/search/docs/guides/intro-structured-data"
           target="_blank"
-          rel="noopener norefferal"
+          rel="noopener noreferrer"
         >
           Google documentation
         </a>{" "}
@@ -24,7 +24,7 @@ export default function About() {
         <a
           href="https://developers.google.com/search/docs/data-types/special-announcements"
           target="_blank"
-          rel="noopener norefferal"
+          rel="noopener noreferrer"
         >
           Google
         </a>
@@ -32,7 +32,7 @@ export default function About() {
         <a
           href="https://www.bing.com/webmaster/help/special-announcement-specifications-5cbd6249"
           target="_blank"
-          rel="noopener norefferal"
+          rel="noopener noreferrer"
         >
           Bing
         </a>
@@ -48,7 +48,7 @@ export default function About() {
           <a
             href="https://search.google.com/structured-data/testing-tool/u/0/"
             target="_blank"
-            rel="noopener norefferal"
+            rel="noopener noreferrer"
           >
             Structured Data Testing Tool
           </a>
@@ -74,7 +74,7 @@ export default function About() {
           <a
             href="https://search.google.com/test/rich-results"
             target="_blank"
-            rel="noopener norefferal"
+            rel="noopener noreferrer"
           >
             Rich Results Test
           </a>{" "}

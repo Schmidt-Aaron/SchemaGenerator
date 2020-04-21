@@ -24,6 +24,10 @@ export default function InputPanel(props) {
     props.updateState(name, value);
   };
 
+  const handleClick = (event) => {
+    event.target.select();
+  };
+
   return (
     <div className="panel">
       <h3>Inputs:</h3>
@@ -34,6 +38,7 @@ export default function InputPanel(props) {
           name="announcementName"
           value={announcementName}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="announcementText">Announcement Text</label>
@@ -43,6 +48,7 @@ export default function InputPanel(props) {
           name="announcementText"
           value={announcementText}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="datePosted">Posted Date (MM-DD-YYYY)</label>
@@ -51,6 +57,7 @@ export default function InputPanel(props) {
           name="datePosted"
           value={datePosted}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="dateExpires">Expiration Date (MM-DD-YYYY)</label>
@@ -59,6 +66,7 @@ export default function InputPanel(props) {
           name="dateExpires"
           value={dateExpires}
           onChange={handleChange}
+          onClick={handleClick}
         />
         {/* Only use if need to toggle between local business and civic structure */}
         {/* <label htmlFor="type">Local Business vs Civic Structure</label>
@@ -70,6 +78,7 @@ export default function InputPanel(props) {
           name="businessName"
           value={businessName}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="telephone">Phone Number</label>
@@ -78,6 +87,7 @@ export default function InputPanel(props) {
           name="telephone"
           value={telephone}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="priceRange">Price Range</label>
@@ -86,6 +96,7 @@ export default function InputPanel(props) {
           name="priceRange"
           value={priceRange}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="businessImage">Business Image (URL)</label>
@@ -94,6 +105,7 @@ export default function InputPanel(props) {
           name="businessImage"
           value={businessImage}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="Business URL">Business URL</label>
@@ -102,6 +114,7 @@ export default function InputPanel(props) {
           name="businessURL"
           value={businessURL}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="Street Address">Street Address</label>
@@ -110,13 +123,26 @@ export default function InputPanel(props) {
           name="streetAddress"
           value={streetAddress}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="City">City</label>
-        <input type="text" name="city" value={city} onChange={handleChange} />
+        <input
+          type="text"
+          name="city"
+          value={city}
+          onChange={handleChange}
+          onClick={handleClick}
+        />
 
         <label htmlFor="state">State / Region(non-US)</label>
-        <input type="text" name="state" value={state} onChange={handleChange} />
+        <input
+          type="text"
+          name="state"
+          value={state}
+          onChange={handleChange}
+          onClick={handleClick}
+        />
 
         <label htmlFor="Zip Code">Zip Code</label>
         <input
@@ -124,6 +150,7 @@ export default function InputPanel(props) {
           name="zipCode"
           value={zipCode}
           onChange={handleChange}
+          onClick={handleClick}
         />
 
         <label htmlFor="Country">Country</label>
@@ -132,6 +159,7 @@ export default function InputPanel(props) {
           name="country"
           value={country}
           onChange={handleChange}
+          onClick={handleClick}
         />
       </form>
     </div>
