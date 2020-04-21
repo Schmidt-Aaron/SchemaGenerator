@@ -6,8 +6,7 @@ Check out the [live version](https://dreamy-pike-423300.netlify.com/).
 
 ## TODO
 
-- add indentation to output code
-- add single button "add to clipboard"
+- add toggle for business type: local biz vs ...??
 - convert date fields to date picker inputs
 - add general styles
 - add tooltips to inputs?
