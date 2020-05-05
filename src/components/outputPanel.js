@@ -24,18 +24,25 @@ const OutputPanel = React.forwardRef((props, ref) => {
 
   return (
     <div className="panel">
-      <h3>JSON-LD Schema </h3>
+      <h3>JSON-LD Schema Preview</h3>
 
       <code ref={ref} className="codeBlock">
-        <p>{`<script type="application/ld+json">`}</p>
+        {/* <p>{`<script type="application/ld+json">`}</p> */}
+        <p>
+          <span className="script">{`<`}</span>
+          <span className="script">script </span>
+          <span className="attr">type=</span>
+          <span className="value">"application/ld+json"</span>
+          <span className="script">{`>`}</span>
+        </p>
         <p className="indent-1">{`{`}</p>
         <p className="indent-1">
-          <span className="key">{`"@context"`}</span>:{" "}
+          <span className="type">{`"@context"`}</span>:{" "}
           <span className="value">"https://schema.org",</span>
         </p>
         <p className="indent-1">
           <span className="key">
-            <span className="key">{`"@type"`}:</span>{" "}
+            <span className="type">{`"@type"`}:</span>{" "}
             <span className="value"></span>
             <span className="value">{`"SpecialAnnouncement",`}</span>
           </span>
@@ -64,7 +71,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
           <span className="key">{`"announcementLocation"`}:</span> {`{`}
         </p>
         <p className="indent-2">
-          <span className="key">{`"@type"`}:</span>{" "}
+          <span className="type">{`"@type"`}:</span>{" "}
           <span className="value">{`"LocalBusiness",`}</span>
         </p>
         <p className="indent-2">
@@ -91,7 +98,8 @@ const OutputPanel = React.forwardRef((props, ref) => {
           <span className="key">{`"address"`}:</span> {`{`}
         </p>
         <p className="indent-3">
-          <span className="key">{`"@type"`}:</span> {`"PostalAddress",`}
+          <span className="type">{`"@type"`}:</span>{" "}
+          <span className="value">{`"PostalAddress",`}</span>
         </p>
         <p className="indent-3">
           <span className="key">{`"streetAddress"`}:</span>{" "}
@@ -116,7 +124,9 @@ const OutputPanel = React.forwardRef((props, ref) => {
         <p className="indent-3">{`}`}</p>
         <p className="indent-2">{`}`}</p>
         <p className="indent-1">{`}`}</p>
-        <p>{`</script>`}</p>
+        <p>
+          <span className="script">{`</script>`}</span>
+        </p>
       </code>
     </div>
   );

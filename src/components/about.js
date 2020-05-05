@@ -7,8 +7,8 @@ export default function About() {
       <p>
         This tool is meant to help speed up the creation of JSON-LD snippets of
         the new Special Announcement Schema that was rolled out as a response to
-        the Covid pandemic. If you are unfamiliar with structured data and it's
-        implementation then I suggest you check out the{" "}
+        the Covid-19 pandemic. If you are unfamiliar with structured data and
+        it's implementation then I suggest you check out the{" "}
         <a
           href="https://developers.google.com/search/docs/guides/intro-structured-data"
           target="_blank"
@@ -16,7 +16,8 @@ export default function About() {
         >
           Google documentation
         </a>{" "}
-        to get up-to-speed.
+        to get up-to-speed. This tool is intended to be used specifically for
+        business updates.
       </p>
       <p>
         You can read more about the Special Announcement schema in the

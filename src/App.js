@@ -10,7 +10,7 @@ import { SAProvider } from "./context/specialAnnouncement";
 function App() {
   // app state
   const initialState = {
-    announcementName: "[business name] Covid-19 Operating Hours",
+    announcementName: "[business name] Updated Operating Hours",
     announcementText:
       "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees is our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
     datePosted: "05-01-2020",
@@ -49,9 +49,9 @@ function App() {
 
   return (
     <div className="App">
-      {announcementData.msg ? <Banner /> : null}
+      {announcementData.msg ? <Banner className="banner" /> : null}
       <header className="header">
-        <h1>Special Announcement Schema Generator *WIP*</h1>
+        <h1>Special Announcement Schema Generator</h1>
       </header>
       <main className="main">
         <About />
@@ -66,13 +66,17 @@ function App() {
           </SAProvider>
         </section>
       </main>
-      <p className="attribution">
-        This tool was developed by Aaron Schmidt and is a work in progress.
-        Feedback and/or bug reports are appreciated.{" "}
-        <a href="https://github.com/Schmidt-Aaron/SchemaGenerator">
-          Source Code
-        </a>
-      </p>
+      <footer className="attribution">
+        <p>
+          This tool was developed by Aaron Schmidt and is a work in progress.
+          Feedback and/or bug reports are appreciated.{" "}
+        </p>
+        <p>
+          <a href="https://github.com/Schmidt-Aaron/SchemaGenerator">
+            Source Code
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

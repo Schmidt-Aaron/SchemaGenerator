@@ -1,11 +1,12 @@
 /* globals */
 :root {
-  --success: green;
-  --caution: red;
+  --success: #4caf50;
+  --caution: #f44336;
   --main-font: rgba(0, 0, 0, 0.8);
-  --code: red;
-  --key: red;
-  --value: darkblue;
+  --type: rgba(0, 0, 0, 0.6);
+  --value: #b71c1c; /* red 900*/
+  --attr: #3f51b5; /* indigo 900 */
+  --script: #388e3c;
 }
 
 html,
@@ -108,11 +109,24 @@ code p {
   color: var(--key);
 }
 
+.script {
+  color: var(--script);
+}
+
+.attr {
+  color: var(--attr);
+}
+
 .key {
   color: var(--key);
 }
+
 .value {
   color: var(--value);
+}
+
+.type {
+  color: var(--type);
 }
 
 /* end json-ld CSS */
