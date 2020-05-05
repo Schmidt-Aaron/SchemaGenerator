@@ -30,67 +30,88 @@ const OutputPanel = React.forwardRef((props, ref) => {
         <p>{`<script type="application/ld+json">`}</p>
         <p className="indent-1">{`{`}</p>
         <p className="indent-1">
-          {`"@context"`}: {`"https://schema.org",`}
+          <span className="key">{`"@context"`}</span>:{" "}
+          <span className="value">"https://schema.org",</span>
         </p>
         <p className="indent-1">
-          {`"@type"`}: {`"SpecialAnnouncement",`}
+          <span className="key">
+            <span className="key">{`"@type"`}:</span>{" "}
+            <span className="value"></span>
+            <span className="value">{`"SpecialAnnouncement",`}</span>
+          </span>
         </p>
         <p className="indent-1">
-          {`"name"`}: {`"${announcementName}",`}
+          <span className="key">{`"name"`}:</span>{" "}
+          <span className="value">{`"${announcementName}",`}</span>
         </p>
         <p className="indent-1">
-          {`"text"`}: {`"${announcementText}",`}
+          <span className="key">{`"text"`}:</span>{" "}
+          <span className="value">{`"${announcementText}",`}</span>
         </p>
         <p className="indent-1">
-          {`"datePosted"`}: {`"${datePosted}",`}
+          <span className="key">{`"datePosted"`}:</span>{" "}
+          <span className="value">{`"${datePosted}",`}</span>
         </p>
         <p className="indent-1">
-          {`"expires"`}: {`"${dateExpires}",`}
+          <span className="key">{`"expires"`}:</span>{" "}
+          <span className="value">{`"${dateExpires}",`}</span>
         </p>
         <p className="indent-1">
-          {`"category"`}: {`"https://www.wikidata.org/wiki/Q81068910",`}
+          <span className="key">{`"category"`}:</span>{" "}
+          <span className="value">{`"https://www.wikidata.org/wiki/Q81068910",`}</span>
         </p>
         <p className="indent-1">
-          {`"announcementLocation"`}: {`{`}
+          <span className="key">{`"announcementLocation"`}:</span> {`{`}
         </p>
         <p className="indent-2">
-          {`"@type"`}: {`"LocalBusiness",`}
+          <span className="key">{`"@type"`}:</span>{" "}
+          <span className="value">{`"LocalBusiness",`}</span>
         </p>
         <p className="indent-2">
-          {`"name"`}:{`"${businessName}",`}
+          <span className="key">{`"name"`}:</span>
+          <span className="value">{`"${businessName}",`}</span>
         </p>
         <p className="indent-2">
-          {`"telephone"`}: {`"${telephone}",`}
+          <span className="key">{`"telephone"`}:</span>{" "}
+          <span className="value">{`"${telephone}",`}</span>
         </p>
         <p className="indent-2">
-          {`"priceRange"`}: {`"${priceRange}",`}
+          <span className="key">{`"priceRange"`}:</span>{" "}
+          <span className="value">{`"${priceRange}",`}</span>
         </p>
         <p className="indent-2">
-          {`"image"`}: {`"${businessImage}",`}
+          <span className="key">{`"image"`}:</span>{" "}
+          <span className="value">{`"${businessImage}",`}</span>
         </p>
         <p className="indent-2">
-          {`"url"`}: {`"${businessURL}",`}
+          <span className="key">{`"url"`}:</span>{" "}
+          <span className="value">{`"${businessURL}",`}</span>
         </p>
         <p className="indent-2">
-          {`"address"`}: {`{`}
+          <span className="key">{`"address"`}:</span> {`{`}
         </p>
         <p className="indent-3">
-          {`"@type"`}: {`"PostalAddress",`}
+          <span className="key">{`"@type"`}:</span> {`"PostalAddress",`}
         </p>
         <p className="indent-3">
-          {`"streetAddress"`}: {`"${streetAddress}",`}
+          <span className="key">{`"streetAddress"`}:</span>{" "}
+          <span className="value">{`"${streetAddress}",`}</span>
         </p>
         <p className="indent-3">
-          {`"addressLocality"`}: {`"${city}",`}
+          <span className="key">{`"addressLocality"`}:</span>{" "}
+          <span className="value">{`"${city}",`}</span>
         </p>
         <p className="indent-3">
-          {`"addressRegion"`}: {`"${state}",`}
+          <span className="key">{`"addressRegion"`}:</span>{" "}
+          <span className="value">{`"${state}",`}</span>
         </p>
         <p className="indent-3">
-          {`"postalCode"`}: {`"${zipCode}",`}
+          <span className="key">{`"postalCode"`}:</span>{" "}
+          <span className="value">{`"${zipCode}",`}</span>
         </p>
         <p className="indent-3">
-          {`"addressCountry"`}: {`"${country}"`}
+          <span className="key">{`"addressCountry"`}:</span>{" "}
+          <span className="value">{`"${country}"`}</span>
         </p>
         <p className="indent-3">{`}`}</p>
         <p className="indent-2">{`}`}</p>

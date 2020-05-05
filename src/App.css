@@ -3,6 +3,9 @@
   --success: green;
   --caution: red;
   --main-font: rgba(0, 0, 0, 0.8);
+  --code: red;
+  --key: red;
+  --value: darkblue;
 }
 
 html,
@@ -86,6 +89,7 @@ textarea {
   text-align: center;
 }
 
+/* json-ld CSS */
 .indent-1 {
   margin-left: 1rem;
 }
@@ -101,4 +105,14 @@ textarea {
 code p {
   margin: 0.75rem 0;
   word-break: break-all;
+  color: var(--key);
 }
+
+.key {
+  color: var(--key);
+}
+.value {
+  color: var(--value);
+}
+
+/* end json-ld CSS */
