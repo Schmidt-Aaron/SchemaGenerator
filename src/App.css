@@ -1,3 +1,17 @@
+/* globals */
+:root {
+  --success: green;
+  --caution: red;
+  --main-font: rgba(0, 0, 0, 0.8);
+}
+
+html,
+body {
+  color: var(--main-font);
+}
+
+/* end Globals */
+
 .header {
   display: flex;
   justify-content: center;
@@ -20,6 +34,42 @@
   min-height: 60vh;
   padding: 0.5rem;
 }
+
+/* controls CSS */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.controls button {
+  margin: auto 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: 2px 2px 3px -1px black;
+  transition: all 0.25s ease-in;
+}
+
+.controls button:hover {
+  transform: translateY(1px);
+  box-shadow: 2px 1px 3px -1px #000000b8;
+}
+
+.controls .copy {
+}
+
+.controls .validate {
+  background-color: var(--success);
+  color: white;
+}
+.controls .reset {
+  background-color: var(--caution);
+  color: white;
+}
+
+/* end controls CSS */
 
 label,
 input {
@@ -50,8 +100,5 @@ textarea {
 
 code p {
   margin: 0.75rem 0;
-}
-
-p {
   word-break: break-all;
 }

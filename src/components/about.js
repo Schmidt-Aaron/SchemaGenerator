@@ -5,7 +5,7 @@ export default function About() {
     <div>
       <h2>About</h2>
       <p>
-        This tool is meant to help speed up the creation of JSON+LD snippets of
+        This tool is meant to help speed up the creation of JSON-LD snippets of
         the new Special Announcement Schema that was rolled out as a response to
         the Covid pandemic. If you are unfamiliar with structured data and it's
         implementation then I suggest you check out the{" "}

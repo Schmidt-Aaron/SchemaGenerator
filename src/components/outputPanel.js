@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import SpecialAnnouncementContext from "../context/specialAnnouncement";
 
-export default function OutputPanel(props) {
+const OutputPanel = React.forwardRef((props, ref) => {
   const context = useContext(SpecialAnnouncementContext);
   // console.log(context);
 
@@ -22,33 +22,11 @@ export default function OutputPanel(props) {
     country,
   } = context;
 
-  const codeFieldRef = useRef(null);
-  const copyFieldRef = useRef(null);
-
-  const copyToClipboard = (e) => {
-    // console.log(codeFieldRef.current.textContent);
-    let schemaText = codeFieldRef.current.textContent;
-    navigator.clipboard.writeText(schemaText).then(
-      () => {
-        // success
-        console.log("Schema Copied");
-        copyFieldRef.current.innerText = "Copy Successful!!";
-      },
-      () => {
-        // failed
-        console.log("Copy Failed");
-      }
-    );
-  };
-
   return (
     <div className="panel">
-      <h3>Output Field: </h3>
-      <button className="clip-button" onClick={copyToClipboard}>
-        Copy to Clipboard
-      </button>
-      <span ref={copyFieldRef} className="copy msg"></span>
-      <code ref={codeFieldRef} className="codeBlock">
+      <h3>JSON-LD Schema </h3>
+
+      <code ref={ref} className="codeBlock">
         <p>{`<script type="application/ld+json">`}</p>
         <p className="indent-1">{`{`}</p>
         <p className="indent-1">
@@ -121,4 +99,6 @@ export default function OutputPanel(props) {
       </code>
     </div>
   );
-}
+});
+
+export default OutputPanel;

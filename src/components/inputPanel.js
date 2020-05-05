@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import SpecialAnnouncementContext from "../context/specialAnnouncement";
 
 export default function InputPanel(props) {
+  const values = useContext(SpecialAnnouncementContext);
   const {
     announcementName,
     announcementText,
@@ -16,7 +18,7 @@ export default function InputPanel(props) {
     zipCode,
     state,
     country,
-  } = props.values;
+  } = values;
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -30,7 +32,7 @@ export default function InputPanel(props) {
 
   return (
     <div className="panel">
-      <h3>Inputs:</h3>
+      <h3>Business Details</h3>
       <form>
         <label htmlFor="announcementName">Name of Announcement</label>
         <input
@@ -99,7 +101,7 @@ export default function InputPanel(props) {
           onClick={handleClick}
         />
 
-        <label htmlFor="businessImage">Business Image (URL)</label>
+        <label htmlFor="businessImage">Business Logo URL</label>
         <input
           type="text"
           name="businessImage"
@@ -108,7 +110,7 @@ export default function InputPanel(props) {
           onClick={handleClick}
         />
 
-        <label htmlFor="Business URL">Business URL</label>
+        <label htmlFor="Business URL">Business Website URL</label>
         <input
           type="text"
           name="businessURL"

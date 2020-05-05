@@ -8,7 +8,11 @@ Check out the [live version](https://dreamy-pike-423300.netlify.com/).
 
 - add toggle for business type: local biz vs ...??
 - convert date fields to date picker inputs
+- add validation link
+- reset "copied" on input change
+- ugly vs pretty options?
 - add general styles
+  - add minimal responsiveness.
 - add tooltips to inputs?
 - input/form validation
 - (LONG TERM) componetize different inputs types
