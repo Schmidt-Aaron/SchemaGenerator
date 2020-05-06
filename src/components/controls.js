@@ -6,7 +6,6 @@ const Controls = (props) => {
     navigator.clipboard.writeText(schema).then(
       () => {
         // success
-        // console.log("Schema Copied");
         setBanner("Schema copied!");
       },
       () => {

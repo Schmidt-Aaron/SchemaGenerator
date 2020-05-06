@@ -27,7 +27,7 @@ function App() {
     country: "USA",
     schema: null,
     msg: null,
-    msgType: null,
+    type: null,
   };
 
   const codeRef = React.createRef();

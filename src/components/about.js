@@ -39,8 +39,8 @@ export default function About() {
         </a>
       </p>
       <p>
-        *Please note that this tool is in the early stages of development. I
-        will make it prettier soon ;)*
+        *Please note that this tool is in the early stages of development and
+        might have a few bugs. Feedback is appreciated.*
       </p>
       <h2>Instructions</h2>
       <ul>
