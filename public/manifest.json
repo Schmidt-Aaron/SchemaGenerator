@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Schema Generator",
+  "name": "Special Announcement Schema Generator",
   "icons": [
     {
       "src": "favicon.ico",

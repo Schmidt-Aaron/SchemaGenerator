@@ -42,6 +42,7 @@ function App() {
     });
   };
 
+  // broken; cant update state all at once. Need to explore using a reducer vs loop through??
   const resetState = () => {
     // setAnnouncementData({ initialState });
     console.log("reset");

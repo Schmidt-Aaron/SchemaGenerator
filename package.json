@@ -1,7 +1,7 @@
 {
   "name": "schemaGenerator",
   "version": "0.1.0",
-  "description": "A bare bones JSON+LD schema generator that only supports the (Special Announcement)[https://developers.google.com/search/docs/data-types/special-announcements] schema",
+  "description": "A bare bones JSON-LD schema generator that only supports the (Special Announcement)[https://developers.google.com/search/docs/data-types/special-announcements] schema",
   "private": true,
   "repository": {
     "type": "git",
