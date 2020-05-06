@@ -109,7 +109,11 @@ function App() {
               <InputPanel updateState={updateState} />
               <OutputPanel ref={codeRef} />
             </div>
-            <Controls schema={announcementData.schema} reset={resetState} />
+            <Controls
+              schema={announcementData.schema}
+              reset={resetState}
+              setBanner={setBanner}
+            />
           </SAProvider>
         </section>
       </main>
