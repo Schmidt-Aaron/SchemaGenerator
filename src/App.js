@@ -47,6 +47,20 @@ function App() {
     console.log("reset");
   };
 
+  // reducer to reset state
+  // const reducer = (state, action) => {
+  //   switch (action.type) {
+  //     case "reset":
+  //       return {
+
+  //       };
+  //     case "update":
+  //       return {};
+  //     default:
+  //       return state;
+  //   }
+  // };
+
   const clearBanner = () => {
     setTimeout(() => {
       setAnnouncementData({ ...announcementData, msg: null, type: null });
@@ -91,7 +105,7 @@ function App() {
               reset={resetState}
               setBanner={setBanner}
             />
-            <div className="">
+            <div className="schemaContainer">
               <InputPanel updateState={updateState} />
               <OutputPanel ref={codeRef} />
             </div>

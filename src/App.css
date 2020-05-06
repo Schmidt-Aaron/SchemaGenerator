@@ -27,7 +27,7 @@ body {
   margin: auto;
 }
 /* schema container */
-.inputContainer {
+.schemaContainer {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
@@ -37,6 +37,12 @@ body {
   border: 1px dashed darkblue;
   min-height: 60vh;
   padding: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .schemaContainer {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* controls CSS */
