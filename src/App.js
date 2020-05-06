@@ -27,6 +27,7 @@ function App() {
     country: "USA",
     schema: null,
     msg: null,
+    msgType: null,
   };
 
   const codeRef = React.createRef();
@@ -34,7 +35,6 @@ function App() {
 
   // update function that can be passed into components
   const updateState = (name, value) => {
-    // console.log(codeRef.current.textContent);
     setAnnouncementData({
       ...announcementData,
       [name]: value,
@@ -47,9 +47,38 @@ function App() {
     console.log("reset");
   };
 
+  const clearBanner = () => {
+    setTimeout(() => {
+      setAnnouncementData({ ...announcementData, msg: null, type: null });
+    }, 2000);
+  };
+
+  const setBanner = async (msg) => {
+    if (announcementData.schema === null) {
+      setAnnouncementData({
+        ...announcementData,
+        msg: "Schema Not Copied. Update the input fields and try again.",
+        type: "error",
+      });
+      console.log("Please enter valid schema data");
+    } else {
+      await setAnnouncementData({
+        ...announcementData,
+        msg,
+      });
+    }
+    clearBanner();
+  };
+
   return (
     <div className="App">
-      {announcementData.msg ? <Banner className="banner" /> : null}
+      {announcementData.msg ? (
+        <Banner
+          className="banner"
+          msg={announcementData.msg}
+          type={announcementData.type}
+        />
+      ) : null}
       <header className="header">
         <h1>Special Announcement Schema Generator</h1>
       </header>
@@ -57,8 +86,12 @@ function App() {
         <About />
         <section>
           <SAProvider value={announcementData}>
-            <Controls schema={announcementData.schema} reset={resetState} />
-            <div className="inputContainer">
+            <Controls
+              schema={announcementData.schema}
+              reset={resetState}
+              setBanner={setBanner}
+            />
+            <div className="">
               <InputPanel updateState={updateState} />
               <OutputPanel ref={codeRef} />
             </div>

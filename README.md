@@ -15,6 +15,7 @@ Check out the [live version](https://dreamy-pike-423300.netlify.com/).
   - add minimal responsiveness.
 - add tooltips to inputs?
 - input/form validation
+- add SERP visibilty preview for announcement text (155 chars)
 - (LONG TERM) componetize different inputs types
 - (LONG TERM?) Add support for other schemas + reuse state/context data between schemas
 - (LONG TERM?) auto import / analyze url for existing schemas

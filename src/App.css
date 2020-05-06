@@ -1,7 +1,7 @@
 /* globals */
 :root {
   --success: #4caf50;
-  --caution: #f44336;
+  --error: #f44336;
   --main-font: rgba(0, 0, 0, 0.8);
   --type: rgba(0, 0, 0, 0.6);
   --value: #b71c1c; /* red 900*/
@@ -26,7 +26,7 @@ body {
   max-width: 90vw;
   margin: auto;
 }
-
+/* schema container */
 .inputContainer {
   display: grid;
   grid-gap: 1rem;
@@ -69,7 +69,7 @@ body {
   color: white;
 }
 .controls .reset {
-  background-color: var(--caution);
+  background-color: var(--error);
   color: white;
 }
 
@@ -130,3 +130,24 @@ code p {
 }
 
 /* end json-ld CSS */
+
+/* banner CSS */
+
+.banner {
+  position: fixed;
+  height: 3rem;
+  background: green;
+  width: 100%;
+  display: grid;
+  place-items: center center;
+  color: white;
+  text-transform: capitalize;
+}
+
+.success {
+  background: var(--success);
+}
+
+.error {
+  background: var(--error);
+}

@@ -1,13 +1,13 @@
 import React from "react";
 
 const Controls = (props) => {
-  const { reset, schema } = props;
+  const { reset, schema, setBanner } = props;
   const copyToClipboard = (e) => {
-    console.log(schema);
     navigator.clipboard.writeText(schema).then(
       () => {
         // success
-        console.log("Schema Copied");
+        // console.log("Schema Copied");
+        setBanner("Schema copied!");
       },
       () => {
         // failed

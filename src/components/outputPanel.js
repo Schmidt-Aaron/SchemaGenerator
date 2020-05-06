@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import SpecialAnnouncementContext from "../context/specialAnnouncement";
 
 const OutputPanel = React.forwardRef((props, ref) => {
@@ -27,7 +27,6 @@ const OutputPanel = React.forwardRef((props, ref) => {
       <h3>JSON-LD Schema Preview</h3>
 
       <code ref={ref} className="codeBlock">
-        {/* <p>{`<script type="application/ld+json">`}</p> */}
         <p>
           <span className="script">{`<`}</span>
           <span className="script">script </span>

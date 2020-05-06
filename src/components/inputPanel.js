@@ -43,7 +43,9 @@ export default function InputPanel(props) {
           onClick={handleClick}
         />
 
-        <label htmlFor="announcementText">Announcement Text</label>
+        <label htmlFor="announcementText">
+          Announcement Text (155 chars shown)
+        </label>
         <textarea
           type="text"
           rows={4}
