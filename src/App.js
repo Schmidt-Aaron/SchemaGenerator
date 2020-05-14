@@ -17,7 +17,7 @@ function App() {
     dateExpires: "06-01-2020",
     businessName: "business name",
     priceRange: "$-$$$$",
-    telephone: "555-123-4567",
+    telephone: "",
     businessImage: "logo URL",
     businessURL: "website URL",
     streetAddress: "street address",

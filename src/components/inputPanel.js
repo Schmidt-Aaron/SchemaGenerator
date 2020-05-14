@@ -44,7 +44,7 @@ export default function InputPanel(props) {
         />
 
         <label htmlFor="announcementText">
-          Announcement Text (155 chars shown)
+          Announcement Text (155 chars shown for Bing?)
         </label>
         <textarea
           type="text"
@@ -90,6 +90,7 @@ export default function InputPanel(props) {
           type="text"
           name="telephone"
           value={telephone}
+          placeholder="555-123-4567"
           onChange={handleChange}
           onClick={handleClick}
         />
