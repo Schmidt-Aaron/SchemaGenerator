@@ -30,6 +30,14 @@ export default function InputPanel(props) {
     event.target.select();
   };
 
+  const trimOnBlur = (event) => {
+    const { name, value } = event.target;
+
+    const trimmedValue = value.trim();
+
+    props.updateState(name, trimmedValue);
+  };
+
   return (
     <div className="panel">
       <h3>Business Details</h3>
@@ -41,6 +49,7 @@ export default function InputPanel(props) {
           value={announcementName}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="announcementText">
@@ -53,6 +62,7 @@ export default function InputPanel(props) {
           value={announcementText}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="datePosted">Posted Date (MM-DD-YYYY)</label>
@@ -62,6 +72,7 @@ export default function InputPanel(props) {
           value={datePosted}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="dateExpires">Expiration Date (MM-DD-YYYY)</label>
@@ -71,6 +82,7 @@ export default function InputPanel(props) {
           value={dateExpires}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
         {/* Only use if need to toggle between local business and civic structure */}
         {/* <label htmlFor="type">Local Business vs Civic Structure</label>
@@ -83,6 +95,7 @@ export default function InputPanel(props) {
           value={businessName}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="telephone">Phone Number</label>
@@ -93,6 +106,7 @@ export default function InputPanel(props) {
           placeholder="555-123-4567"
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="priceRange">Price Range</label>
@@ -102,6 +116,7 @@ export default function InputPanel(props) {
           value={priceRange}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="businessImage">Business Logo URL</label>
@@ -111,6 +126,7 @@ export default function InputPanel(props) {
           value={businessImage}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="Business URL">Business Website URL</label>
@@ -120,6 +136,7 @@ export default function InputPanel(props) {
           value={businessURL}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="Street Address">Street Address</label>
@@ -129,6 +146,7 @@ export default function InputPanel(props) {
           value={streetAddress}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="City">City</label>
@@ -138,6 +156,7 @@ export default function InputPanel(props) {
           value={city}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="state">State / Region(non-US)</label>
@@ -147,6 +166,7 @@ export default function InputPanel(props) {
           value={state}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="Zip Code">Zip Code</label>
@@ -156,6 +176,7 @@ export default function InputPanel(props) {
           value={zipCode}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
 
         <label htmlFor="Country">Country</label>
@@ -165,6 +186,7 @@ export default function InputPanel(props) {
           value={country}
           onChange={handleChange}
           onClick={handleClick}
+          onBlur={trimOnBlur}
         />
       </form>
     </div>
