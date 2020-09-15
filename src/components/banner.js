@@ -1,11 +1,11 @@
 import React from "react";
 
 export default function Banner(props) {
-  const { msg, type } = props;
+  const { msg, error } = props;
 
   return (
     <div>
-      {type ? (
+      {error ? (
         <div className="banner error">
           <p>{msg}</p>
         </div>

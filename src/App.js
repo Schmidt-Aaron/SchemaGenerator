@@ -6,34 +6,10 @@ import Controls from "./components/controls";
 import About from "./components/about";
 import Banner from "./components/banner";
 import { SAProvider } from "./context/specialAnnouncement";
+import initialState from "./initialState/specialAnnouncement";
 
 function App() {
-  // app state
-  const initialState = {
-    announcementName: "[business name] Updated Operating Hours",
-    announcementText:
-      "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees is our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
-    datePosted: "09-01-2020",
-    dateExpires: "12-31-2020",
-    businessName: "business name",
-    priceRange: "$-$$$$",
-    telephone: "",
-    businessImage: "logo URL",
-    businessURL: "website URL",
-    streetAddress: "street address",
-    city: "city",
-    zipCode: "zip",
-    state: "state",
-    country: "USA",
-    schema: null,
-    msg: null,
-    error: null,
-  };
-
   const codeRef = React.createRef();
-  // const [announcementData, setAnnouncementData] = useState(initialState);
-
-  // const init = (initialState) => { return {initial}}
 
   // reducer to reset state
   const reducer = (state, action) => {
@@ -55,11 +31,6 @@ function App() {
 
   // update function that can be passed into components
   const updateState = async (name, value) => {
-    // setAnnouncementData({
-    //   ...announcementData,
-    //   [name]: value,
-    //   schema: codeRef.current.textContent,
-    // });
     dispatch({
       type: "update",
       name,
@@ -72,9 +43,7 @@ function App() {
     });
   };
 
-  // broken; cant update state all at once. Need to explore using a reducer vs loop through??
   const resetState = () => {
-    // setAnnouncementData({ initialState });
     dispatch({ type: "reset" });
     console.log("reset");
   };
@@ -92,12 +61,11 @@ function App() {
         type: "update",
         name: "msg",
         value: "Schema Not Copied. Update the input fields and try again.",
-        // type: "error",
       });
       dispatch({
         type: "update",
         name: "error",
-        value: "Schema Not Copied. Update the input fields and try again.",
+        value: true,
       });
       console.log("Please enter valid schema data");
     } else {
@@ -116,7 +84,7 @@ function App() {
         <Banner
           className="banner"
           msg={announcementData.msg}
-          type={announcementData.type}
+          error={announcementData.error}
         />
       ) : null}
       <header className="header">
