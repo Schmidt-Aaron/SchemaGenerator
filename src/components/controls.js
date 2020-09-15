@@ -21,9 +21,9 @@ const Controls = (props) => {
         Copy to Clipboard
       </button>
       {/* <button className="validate">Validate</button> */}
-      {/* <button className="reset" onClick={reset}>
+      <button className="reset" onClick={reset}>
         Reset
-      </button> */}
+      </button>
     </div>
   );
 };

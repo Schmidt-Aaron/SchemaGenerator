@@ -13,8 +13,8 @@ function App() {
     announcementName: "[business name] Updated Operating Hours",
     announcementText:
       "We remain open and dedicated to serving our customers during this time. The safety of our customers and employees is our primary concern. [Add in any other details about how the business is responding to the pandemic here]",
-    datePosted: "05-01-2020",
-    dateExpires: "06-01-2020",
+    datePosted: "09-01-2020",
+    dateExpires: "12-31-2020",
     businessName: "business name",
     priceRange: "$-$$$$",
     telephone: "",
@@ -27,59 +27,84 @@ function App() {
     country: "USA",
     schema: null,
     msg: null,
-    type: null,
+    error: null,
   };
 
   const codeRef = React.createRef();
-  const [announcementData, setAnnouncementData] = useState(initialState);
+  // const [announcementData, setAnnouncementData] = useState(initialState);
+
+  // const init = (initialState) => { return {initial}}
+
+  // reducer to reset state
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "reset":
+        return {
+          ...initialState,
+        };
+      case "update":
+        return {
+          ...state,
+          [action.name]: action.value,
+        };
+      default:
+        return state;
+    }
+  };
+  const [announcementData, dispatch] = useReducer(reducer, initialState);
 
   // update function that can be passed into components
-  const updateState = (name, value) => {
-    setAnnouncementData({
-      ...announcementData,
-      [name]: value,
-      schema: codeRef.current.textContent,
+  const updateState = async (name, value) => {
+    // setAnnouncementData({
+    //   ...announcementData,
+    //   [name]: value,
+    //   schema: codeRef.current.textContent,
+    // });
+    dispatch({
+      type: "update",
+      name,
+      value,
+    });
+    dispatch({
+      type: "update",
+      name: "schema",
+      value: codeRef.current.textContent,
     });
   };
 
   // broken; cant update state all at once. Need to explore using a reducer vs loop through??
   const resetState = () => {
     // setAnnouncementData({ initialState });
+    dispatch({ type: "reset" });
     console.log("reset");
   };
 
-  // reducer to reset state
-  // const reducer = (state, action) => {
-  //   switch (action.type) {
-  //     case "reset":
-  //       return {
-
-  //       };
-  //     case "update":
-  //       return {};
-  //     default:
-  //       return state;
-  //   }
-  // };
-
   const clearBanner = () => {
     setTimeout(() => {
-      setAnnouncementData({ ...announcementData, msg: null, type: null });
+      dispatch({ type: "update", name: "msg", value: null });
+      dispatch({ type: "update", name: "error", value: null });
     }, 2000);
   };
 
   const setBanner = async (msg) => {
     if (announcementData.schema === null) {
-      setAnnouncementData({
-        ...announcementData,
-        msg: "Schema Not Copied. Update the input fields and try again.",
-        type: "error",
+      dispatch({
+        type: "update",
+        name: "msg",
+        value: "Schema Not Copied. Update the input fields and try again.",
+        // type: "error",
+      });
+      dispatch({
+        type: "update",
+        name: "error",
+        value: "Schema Not Copied. Update the input fields and try again.",
       });
       console.log("Please enter valid schema data");
     } else {
-      await setAnnouncementData({
-        ...announcementData,
-        msg,
+      await dispatch({
+        type: "update",
+        name: "msg",
+        value: msg,
       });
     }
     clearBanner();
