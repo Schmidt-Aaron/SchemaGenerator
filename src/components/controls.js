@@ -11,6 +11,7 @@ const Controls = (props) => {
   const { reset, schema, setBanner } = props;
   const copyToClipboard = (e) => {
     const updatedSchema = addCredit(schema);
+    console.log(updatedSchema);
     navigator.clipboard.writeText(updatedSchema).then(
       () => {
         // success

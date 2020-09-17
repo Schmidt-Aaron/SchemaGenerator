@@ -1,128 +1,46 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 import "./App.css";
-import InputPanel from "./components/inputPanel";
-import OutputPanel from "./components/outputPanel";
-import Controls from "./components/controls";
-import About from "./components/about";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Banner from "./components/banner";
-import { SAProvider } from "./context/specialAnnouncement";
-import initialState from "./initialState/specialAnnouncement";
+import Footer from "./components/footer";
+import SpecialAnnouncement from "./pages/SpecialAnnounce";
+import Home from "./pages/Home";
+import FAQ from "./pages/FAQ";
 
 function App() {
-  const codeRef = React.createRef();
-
-  // reducer to reset state
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "reset":
-        return {
-          ...initialState,
-        };
-      case "update":
-        return {
-          ...state,
-          [action.name]: action.value,
-        };
-      default:
-        return state;
-    }
-  };
-  const [announcementData, dispatch] = useReducer(reducer, initialState);
-
-  // update function that can be passed into components
-  const updateState = async (name, value) => {
-    dispatch({
-      type: "update",
-      name,
-      value,
-    });
-    dispatch({
-      type: "update",
-      name: "schema",
-      value: codeRef.current.textContent,
-    });
-  };
-
-  const resetState = () => {
-    dispatch({ type: "reset" });
-    console.log("reset");
-  };
-
-  const clearBanner = () => {
-    setTimeout(() => {
-      dispatch({ type: "update", name: "msg", value: null });
-      dispatch({ type: "update", name: "error", value: null });
-    }, 2000);
-  };
-
-  const setBanner = async (msg) => {
-    if (announcementData.schema === null) {
-      dispatch({
-        type: "update",
-        name: "msg",
-        value: "Schema Not Copied. Update the input fields and try again.",
-      });
-      dispatch({
-        type: "update",
-        name: "error",
-        value: true,
-      });
-      console.log("Please enter valid schema data");
-    } else {
-      await dispatch({
-        type: "update",
-        name: "msg",
-        value: msg,
-      });
-    }
-    clearBanner();
-  };
-
   return (
-    <div className="App">
-      {announcementData.msg ? (
-        <Banner
-          className="banner"
-          msg={announcementData.msg}
-          error={announcementData.error}
-        />
-      ) : null}
-      <header className="header">
-        <h1>Special Announcement Schema Generator</h1>
-      </header>
-      <main className="main">
-        <About />
-        <section>
-          <SAProvider value={announcementData}>
-            <Controls
-              schema={announcementData.schema}
-              reset={resetState}
-              setBanner={setBanner}
-            />
-            <div className="schemaContainer">
-              <InputPanel updateState={updateState} />
-              <OutputPanel ref={codeRef} />
-            </div>
-            <Controls
-              schema={announcementData.schema}
-              reset={resetState}
-              setBanner={setBanner}
-            />
-          </SAProvider>
-        </section>
-      </main>
-      <footer className="attribution">
-        <p>
-          This tool was developed by Aaron Schmidt and is a work in progress.
-          Feedback and/or bug reports are appreciated.{" "}
-        </p>
-        <p>
-          <a href="https://github.com/Schmidt-Aaron/SchemaGenerator">
-            Source Code
-          </a>
-        </p>
-      </footer>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/special">Special Announcement</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ Schema</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/special">
+            <SpecialAnnouncement />
+          </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
