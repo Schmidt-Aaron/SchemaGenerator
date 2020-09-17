@@ -2,8 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Banner from "./components/banner";
-import Footer from "./components/footer";
 import SpecialAnnouncement from "./pages/SpecialAnnounce";
 import Home from "./pages/Home";
 import FAQ from "./pages/FAQ";

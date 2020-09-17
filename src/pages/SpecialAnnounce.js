@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import InputPanel from "../components/SAinputPanel";
 import OutputPanel from "../components/SAoutputPanel";
 import Controls from "../components/controls";
