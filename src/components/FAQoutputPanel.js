@@ -38,13 +38,14 @@ const OutputPanel = React.forwardRef((props, ref) => {
           <span>{`"mainEntity": [{`}</span>
         </p>
         {/* Start Questions */}
+        {/* Initial Question */}
         <p className="indent-2">
           <span className="type">{`"@type"`}</span>:{" "}
           <span className="value">"Question",</span>
         </p>
         <p className="indent-2">
           <span className="type">{`"name"`}</span>:{" "}
-          <span className="value">{`"${questions}"`},</span>
+          <span className="value">{`"${questions[0].value}"`},</span>
         </p>
         <p className="indent-2">
           <span className="type">{`"acceptedAnswer": {`}</span>{" "}
@@ -55,11 +56,49 @@ const OutputPanel = React.forwardRef((props, ref) => {
         </p>
         <p className="indent-3">
           <span className="type">{`"text"`}:</span>{" "}
-          <span className="value">{`"${answers}"`}</span>
+          <span className="value">{`"${answers[0].value}"`}</span>
         </p>
         <p className="indent-3">{`}`}</p>
+        <p className="indent-2">
+          {`}`}
+          {questions.length > 1 && `,`}
+        </p>
+        {/* end  initial question */}
+        {/* start additional question s*/}
+        {questions.length > 1 &&
+          questions.slice(1).map((question, index) => (
+            <div key={index + 1}>
+              <p className="indent-2">{`{`}</p>
+              <p className="indent-2">
+                <span className="type">{`"@type"`}</span>:{" "}
+                <span className="value">"Question",</span>
+              </p>
+              <p className="indent-2">
+                <span className="type">{`"name"`}</span>:{" "}
+                <span className="value">
+                  {`"${questions[index + 1].value}"`},
+                </span>
+              </p>
+              <p className="indent-2">
+                <span className="type">{`"acceptedAnswer": {`}</span>{" "}
+              </p>
+              <p className="indent-3">
+                <span className="type">{`"@type"`}:</span>{" "}
+                <span className="value">"Answer",</span>
+              </p>
+              <p className="indent-3">
+                <span className="type">{`"text"`}:</span>{" "}
+                <span className="value">{`"${answers[index + 1].value}"`}</span>
+              </p>
+              <p className="indent-3">{`}`}</p>
+              <p className="indent-2">
+                {`}`}
+                {questions.length > index + 2 && `,`}
+              </p>
+            </div>
+          ))}
         {/* end questions */}
-        <p className="indent-2">{`}]`}</p> {/* only used on last question*/}
+        <p className="indent-2">{`]`}</p> {/* only used on last question*/}
         <p className="indent-1">{`}`}</p>
         <p>
           <span className="script">{`</script>`}</span>

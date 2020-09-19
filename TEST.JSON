@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ONE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "YES IT IS ONE" }
+    },
+    {
+      "@type": "Question",
+      "name": "TWO?",
+      "acceptedAnswer": { "@type": "Answer", "text": "YES IS IT TWO" }
+    },
+    {
+      "@type": "Question",
+      "name": "THREE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ANSWER #" }
+    }
+  ]
+}

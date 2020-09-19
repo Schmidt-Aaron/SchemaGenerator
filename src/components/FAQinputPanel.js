@@ -5,10 +5,18 @@ export default function InputPanel(props) {
   const values = useContext(FAQContext);
   const { questions, answers, n } = values;
 
-  const handleChange = (event) => {
+  // const handleChange = (event) => {
+  //   const { name, value } = event.target;
+
+  //   props.updateState(name, value);
+  // };
+
+  const handleArrayChange = (event, index) => {
     const { name, value } = event.target;
 
-    props.updateState(name, value);
+    // console.log(event);
+    // console.log(name, value);
+    props.updateState(name, value, index);
   };
 
   const handleClick = (event) => {
@@ -19,8 +27,8 @@ export default function InputPanel(props) {
     const { name, value } = event.target;
 
     const trimmedValue = value.trim();
-
-    props.updateState(name, trimmedValue);
+    // console.log(`trimonblur: ${name}, ${value}`);
+    // props.updateState(name, trimmedValue);
   };
 
   // add another faq input to DOM
@@ -30,30 +38,42 @@ export default function InputPanel(props) {
     props.addFAQ();
   };
 
+  console.log(questions);
+
   return (
     <div className="panel">
       <h3>FAQs</h3>
       <form>
-        <label htmlFor="questions[0]Name">Question #1</label>
-        <input
-          type="text"
-          name="questions"
-          value={questions}
-          onChange={handleChange}
-          onClick={handleClick}
-          onBlur={trimOnBlur}
-        />
+        <div className="FAQS">
+          {questions.map((question, index) => (
+            <div className="FAQ" key={index}>
+              <label htmlFor={`questions[${index}]`}>{`Question #${
+                index + 1
+              }`}</label>
+              <input
+                type="text"
+                name={`questions`}
+                value={questions[index].value}
+                onChange={(e) => handleArrayChange(e, index)}
+                onClick={handleClick}
+                onBlur={trimOnBlur}
+              />
 
-        <label htmlFor="answers[0]Text">Answer #1</label>
-        <textarea
-          type="text"
-          rows={4}
-          name="answers"
-          value={answers}
-          onChange={handleChange}
-          onClick={handleClick}
-          onBlur={trimOnBlur}
-        />
+              <label htmlFor={`answers[${index}]`}>{`Answer #${
+                index + 1
+              }`}</label>
+              <textarea
+                type="text"
+                rows={4}
+                name={`answers`}
+                value={answers[index].value}
+                onChange={(e) => handleArrayChange(e, index)}
+                onClick={handleClick}
+                onBlur={trimOnBlur}
+              />
+            </div>
+          ))}
+        </div>
         <button onClick={addFAQ}>+</button>
       </form>
     </div>
