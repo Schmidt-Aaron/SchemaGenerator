@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SpecialAnnouncement from "./pages/SpecialAnnounce";
 import Home from "./pages/Home";
 import FAQ from "./pages/FAQ";
-import NavBar from "./components/nav";
+import Article from "./pages/Article";
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
         </Route>
         <Route path="/faq">
           <FAQ />
+        </Route>
+        <Route path="/article">
+          <Article />
         </Route>
         <Route path="/">
           <Home />

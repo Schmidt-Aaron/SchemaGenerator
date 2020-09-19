@@ -89,7 +89,7 @@ function SpecialAnnouncement() {
       ) : null}
       <NavBar />
       <main className="main">
-        <h1>Special Announcement Schema Generator</h1>
+        <h1>Special Announcement Schema Generator *WIP*</h1>
         <About />
         <section>
           <SAProvider value={announcementData}>

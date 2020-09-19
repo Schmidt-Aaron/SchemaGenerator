@@ -17,7 +17,10 @@ const NavBar = () => (
           <Link to="/special">Special Announcement</Link>
         </li>
         <li>
-          <Link to="/faq">FAQ Schema</Link>
+          <Link to="/faq">FAQ</Link>
+        </li>
+        <li>
+          <Link to="/article">Article</Link>
         </li>
       </ul>
     </nav>
