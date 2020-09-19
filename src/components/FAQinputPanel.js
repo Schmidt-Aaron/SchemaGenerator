@@ -5,30 +5,25 @@ export default function InputPanel(props) {
   const values = useContext(FAQContext);
   const { questions, answers, n } = values;
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-
-  //   props.updateState(name, value);
-  // };
-
   const handleArrayChange = (event, index) => {
     const { name, value } = event.target;
 
-    // console.log(event);
-    // console.log(name, value);
-    props.updateState(name, value, index);
+    props.updateArray(name, value, index);
   };
 
   const handleClick = (event) => {
     event.target.select();
   };
 
-  const trimOnBlur = (event) => {
+  // sanitizing/format entry
+  const editOnBlur = (event, index) => {
     const { name, value } = event.target;
 
     const trimmedValue = value.trim();
+    const capitalizedValue =
+      trimmedValue.charAt(0).toUpperCase() + trimmedValue.slice(1);
     // console.log(`trimonblur: ${name}, ${value}`);
-    // props.updateState(name, trimmedValue);
+    props.updateArray(name, capitalizedValue, index);
   };
 
   // add another faq input to DOM
@@ -56,7 +51,7 @@ export default function InputPanel(props) {
                 value={questions[index].value}
                 onChange={(e) => handleArrayChange(e, index)}
                 onClick={handleClick}
-                onBlur={trimOnBlur}
+                onBlur={(e) => editOnBlur(e, index)}
               />
 
               <label htmlFor={`answers[${index}]`}>{`Answer #${
@@ -69,7 +64,7 @@ export default function InputPanel(props) {
                 value={answers[index].value}
                 onChange={(e) => handleArrayChange(e, index)}
                 onClick={handleClick}
-                onBlur={trimOnBlur}
+                onBlur={(e) => editOnBlur(e, index)}
               />
             </div>
           ))}

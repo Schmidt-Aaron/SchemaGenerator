@@ -20,7 +20,7 @@ function FAQ() {
 
   // reducer to reset state
   const reducer = (state, action) => {
-    const { name, value, index, code } = action;
+    const { name, value, index, code, msg, error } = action;
     // console.log(
     //   `reducer call: state:${state}, action:${action}, index:${index}`
     // );
@@ -39,7 +39,6 @@ function FAQ() {
       case "ARRAY_UPDATE":
         const newArr = [...state[name]];
         newArr.find((item) => item.id === index).value = value;
-        console.log(newArr, index);
         return {
           ...state,
           [name]: newArr,
@@ -50,6 +49,12 @@ function FAQ() {
           ...state,
           [name]: value,
         };
+      case "ERROR_UPDATE":
+        return {
+          ...state,
+          msg,
+          error,
+        };
 
       default:
         return state;
@@ -59,7 +64,7 @@ function FAQ() {
   const [FAQData, dispatch] = useReducer(reducer, initialState);
 
   // update function that can be passed into components
-  const updateState = (name, value, index) => {
+  const updateArray = (name, value, index) => {
     console.log(`updating: ${name}, ${value}, ${index}`);
     dispatch({
       type: "ARRAY_UPDATE",
@@ -70,6 +75,15 @@ function FAQ() {
     });
   };
 
+  // update single item - not used
+  // const updateSingle = (name, value) => {
+  //   dispatch({
+  //     type: "SINGLE_UPDATE",
+  //     name,
+  //     value,
+  //   });
+  // };
+
   const resetState = () => {
     dispatch({ type: "RESET" });
     console.log("reset");
@@ -77,23 +91,18 @@ function FAQ() {
 
   const clearBanner = () => {
     setTimeout(() => {
-      dispatch({ type: "SINGLE_UPDATE", name: "msg", value: null });
-      dispatch({ type: "SINGLE_UPDATE", name: "error", value: null });
+      dispatch({ type: "ERROR_UPDATE", msg: null, error: null });
     }, 2000);
   };
 
   const setBanner = async (msg) => {
     if (FAQData.schema === null) {
       dispatch({
-        type: "SINGLE_UPDATE",
-        name: "msg",
-        value: "Schema Not Copied. Update the input fields and try again.",
+        type: "ERROR_UPDATE",
+        msg: "Schema Not Copied. Update the input fields and try again.",
+        error: true,
       });
-      dispatch({
-        type: "SINGLE_UPDATE",
-        name: "error",
-        value: true,
-      });
+
       console.log("Please enter valid schema data");
     } else {
       await dispatch({
@@ -104,10 +113,6 @@ function FAQ() {
     }
     clearBanner();
   };
-
-  // const increaseFAQNumber = () => {
-  //   dispatch({ type: "update", name: "n", value: (FAQData.n += 1) });
-  // };
 
   const addFAQ = () => {
     dispatch({ type: "ADD_FAQ" });
@@ -131,7 +136,7 @@ function FAQ() {
               setBanner={setBanner}
             />
             <div className="schemaContainer">
-              <InputPanel updateState={updateState} addFAQ={addFAQ} />
+              <InputPanel updateArray={updateArray} addFAQ={addFAQ} />
               <OutputPanel ref={codeRef} />
             </div>
             <Controls
