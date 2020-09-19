@@ -6,6 +6,7 @@ import About from "../components/aboutSA";
 import Banner from "../components/banner";
 import { SAProvider } from "../context/specialAnnouncement";
 import initialState from "../initialState/specialAnnouncement";
+import NavBar from "../components/nav";
 
 function SpecialAnnouncement() {
   const codeRef = React.createRef();
@@ -86,10 +87,9 @@ function SpecialAnnouncement() {
           error={announcementData.error}
         />
       ) : null}
-      <header className="header">
-        <h1>Special Announcement Schema Generator</h1>
-      </header>
+      <NavBar />
       <main className="main">
+        <h1>Special Announcement Schema Generator</h1>
         <About />
         <section>
           <SAProvider value={announcementData}>

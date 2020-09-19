@@ -12,20 +12,48 @@
 html,
 body {
   color: var(--main-font);
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 /* end Globals */
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main {
+.App {
   max-width: 90vw;
   margin: auto;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+.header nav a,
+.header h1 a {
+  text-decoration: none;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+.main {
+  /* max-width: 90vw; */
+  margin: auto;
+}
+
 /* schema container */
 .schemaContainer {
   display: grid;
@@ -141,9 +169,11 @@ code p {
 
 .banner {
   position: fixed;
+  top: 0;
   height: 3rem;
   background: green;
-  width: 100%;
+  width: 110vw;
+  margin-left: -10vw;
   display: grid;
   place-items: center center;
   color: white;

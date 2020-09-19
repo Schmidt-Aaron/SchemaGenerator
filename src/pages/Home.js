@@ -2,10 +2,12 @@ import React from "react";
 
 // import Banner from "../components/banner";
 import Footer from "../components/footer";
+import NavBar from "../components/nav";
 
 function Home() {
   return (
     <div className="App">
+      <NavBar />
       {/* {announcementData.msg ? (
         <Banner
           className="banner"
@@ -13,9 +15,7 @@ function Home() {
           error={announcementData.error}
         />
       ) : null} */}
-      <header className="header">
-        <h1>Schema Generator Tool</h1>
-      </header>
+
       <main className="main">
         <h2>About the tool</h2>
         <p>

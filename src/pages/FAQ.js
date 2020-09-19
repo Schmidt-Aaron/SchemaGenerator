@@ -5,6 +5,7 @@ import Controls from "../components/controls";
 import About from "../components/aboutFAQ";
 import { FAQProvider } from "../context/FAQ";
 import Banner from "../components/banner";
+import NavBar from "../components/nav";
 
 function FAQ() {
   const codeRef = React.createRef();
@@ -120,13 +121,12 @@ function FAQ() {
 
   return (
     <div className="App">
-      {FAQData.msg ? (
-        <Banner className="banner" msg={FAQData.msg} error={FAQData.error} />
-      ) : null}
-      <header className="header">
-        <h1>FAQ Schema Generator *WIP*</h1>
-      </header>
+      <NavBar />
       <main className="main">
+        {FAQData.msg ? (
+          <Banner className="banner" msg={FAQData.msg} error={FAQData.error} />
+        ) : null}
+        <h1>FAQ Schema Generator *WIP*</h1>
         <About />
         <section>
           <FAQProvider value={FAQData}>
