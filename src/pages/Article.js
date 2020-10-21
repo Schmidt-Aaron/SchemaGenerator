@@ -20,7 +20,7 @@ function FAQ() {
     authorName: "", // Text
     publisherType: "Organization", // is always org??
     publisher: "", // Text
-    publisherLogo: "", // URL
+    publisherLogoURL: "", // URL
     datePublished: "", // 2020-09-01
     dateModified: "", // 2020-09-01
     msg: null,
@@ -157,7 +157,7 @@ function FAQ() {
                 updateSingle={updateSingle}
                 addFAQ={addFAQ}
               />
-              {/* <OutputPanel ref={codeRef} /> */}
+              <OutputPanel ref={codeRef} />
             </div>
             <Controls
               schema={articleData.schema}

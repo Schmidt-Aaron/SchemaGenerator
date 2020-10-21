@@ -11,7 +11,6 @@ Check out the [live version](https://dreamy-pike-423300.netlify.com/).
 - add validation link
 - ugly vs pretty options?
 - add general styles
-  - add minimal responsiveness.
 - add tooltips to inputs?
 - input/form validation
 - (LONG TERM?) componetize different inputs types

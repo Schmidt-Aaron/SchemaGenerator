@@ -69,7 +69,7 @@ export default function InputPanel(props) {
             </div>
           ))}
         </div>
-        <button onClick={addFAQ}>+</button>
+        <button onClick={addFAQ}>Add FAQ</button>
       </form>
     </div>
   );

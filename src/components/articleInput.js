@@ -70,37 +70,43 @@ export default function InputPanel(props) {
       <form>
         <div className="article">
           <label>Article Type</label>
-          <input type="text" name="articleType" value={articleType} />
-
+          <select value={articleType}>
+            <option name="Article">Article</option>
+            <option name="NewsArticle">NewsArticle</option>
+            <option name="BlogPosting">BlogPosting</option>
+          </select>
           <label>Article URL</label>
-          <input type="text" name="articleType" value={url} />
+          <input type="text" name="url" value={url} />
 
           <label>Headline</label>
-          <input type="text" name="articleType" value={headline} />
+          <input type="text" name="headline" value={headline} />
 
           <label>Image URL #1</label>
-          <input type="text" name="articleType" value={image} />
+          <input type="text" name="image" value={image} />
 
           <label>Description</label>
-          <input type="text" name="articleType" value={description} />
+          <input type="text" name="description" value={description} />
 
           <label>Author Type</label>
-          <input type="text" name="articleType" value={authorType} />
+          <select value={authorType}>
+            <option name="Person">Person</option>
+            <option name="Organization">Organization</option>
+          </select>
 
           <label>Author Name</label>
-          <input type="text" name="articleType" value={authorName} />
+          <input type="text" name="authorName" value={authorName} />
 
           <label>Publisher</label>
-          <input type="text" name="articleType" value={publisher} />
+          <input type="text" name="publisher" value={publisher} />
 
           <label>Publisher Logo URL</label>
-          <input type="text" name="articleType" value={publisherLogo} />
+          <input type="text" name="publisherLogo" value={publisherLogo} />
 
           <label>Date Published</label>
-          <input type="text" name="articleType" value={datePublished} />
+          <input type="text" name="datePublished" value={datePublished} />
 
           <label>Date Modified</label>
-          <input type="text" name="articleType" value={dateModified} />
+          <input type="text" name="dateModified" value={dateModified} />
 
           {/* {questions.map((question, index) => (
             <div className="FAQ" key={index}>
