@@ -6,7 +6,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
   // console.log(context);
   const {
     articleType,
-    url,
+    articleUrl,
     headline,
     image,
     description,
@@ -28,7 +28,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
       <h3>JSON-LD Schema Preview</h3>
 
       <code ref={ref} className="codeBlock">
-      <p>
+        <p>
           <span className="script">{`<`}</span>
           <span className="script">script </span>
           <span className="attr">type=</span>
@@ -44,10 +44,32 @@ const OutputPanel = React.forwardRef((props, ref) => {
           <span className="type">{`"@type"`}</span>:{" "}
           <span className="value">{`"${articleType}"`},</span>
         </p>
+        {articleUrl && (
+          <div>
+            <p className="indent-1">
+              <span className="type">{`"mainEntityOfPage`}</span>:{" {"}
+            </p>
+            <p className="indent-2">
+              <span className="type">{`"@type"`}</span>:{" "}
+              <span className="value">{`"WebPage"`},</span>
+            </p>
+            <p className="indent-2">
+              <span className="type">{`"@id"`}</span>:{" "}
+              <span className="value">{`"${articleUrl}"`}</span>
+            </p>
+            <p className="indent-1">{`},`}</p>
+          </div>
+        )}
         <p className="indent-1">
           <span className="type">{`"headline"`}</span>:{" "}
           <span className="value">{`"${headline}"`},</span>
         </p>
+        {description && (
+          <p className="indent-1">
+            <span className="type">{`"description"`}</span>:{" "}
+            <span className="value">{`"${description}"`},</span>
+          </p>
+        )}
         <p className="indent-1">
           <span className="type">{`"author"`}</span>:{" {"}
         </p>
@@ -69,29 +91,41 @@ const OutputPanel = React.forwardRef((props, ref) => {
         </p>
         <p className="indent-2">
           <span className="type">{`"name"`}</span>:{" "}
-          <span className="value">{`"${publisher}"`},</span>
+          <span className="value">
+            {`"${publisher}"`}
+            {publisherLogoURL && ","}
+          </span>
         </p>
-        <p className="indent-2">
-          <span className="type">{`"logo"`}</span>:{" {"}
-        </p>
-        <p className="indent-3">
-          <span className="type">{`"@type"`}</span>:{" "}
-          <span className="value">{"ImageObject"},</span>
-        </p>
-        <p className="indent-3">
-          <span className="type">{`"url"`}</span>:{" "}
-          <span className="value">{`"${publisherLogoURL}"`}</span>
-        </p>
+        {publisherLogoURL && (
+          <div>
+            <p className="indent-2">
+              <span className="type">{`"logo"`}</span>:{" {"}
+            </p>
+            <p className="indent-3">
+              <span className="type">{`"@type"`}</span>:{" "}
+              <span className="value">{"ImageObject"},</span>
+            </p>
+            <p className="indent-3">
+              <span className="type">{`"url"`}</span>:{" "}
+              <span className="value">{`"${publisherLogoURL}"`}</span>
+            </p>
+          </div>
+        )}
         <p className="indent-2">{`}`}</p>
         <p className="indent-1">{`},`}</p>
         <p className="indent-1">
           <span className="type">{`"datePublished"`}</span>:{" "}
-  <span className="value">{`"${datePublished}"`}{dateModified && (",")}</span>
+          <span className="value">
+            {`"${datePublished}"`}
+            {dateModified && ","}
+          </span>
         </p>
-        {dateModified && (<p className="indent-1">
-          <span className="type">{`"dateModified"`}</span>:{" "}
-          <span className="value">{`"${dateModified}"`},</span>
-        </p>)}
+        {dateModified && (
+          <p className="indent-1">
+            <span className="type">{`"dateModified"`}</span>:{" "}
+            <span className="value">{`"${dateModified}"`}</span>
+          </p>
+        )}
         <p>{`}`}</p>
         <p>
           <span className="script">{`</`}</span>

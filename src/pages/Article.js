@@ -12,7 +12,7 @@ function FAQ() {
 
   const initialState = {
     articleType: ["Article", "NewsArticle", "BlogPosting"], // dropdown
-    url: "", // URL
+    articleUrl: null, // URL
     headline: "", // Text
     image: [{ id: 0, value: "" }], // optional, array
     description: null, // optional, Text

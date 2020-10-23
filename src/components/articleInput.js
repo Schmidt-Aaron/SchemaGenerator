@@ -5,7 +5,7 @@ export default function InputPanel(props) {
   const context = useContext(ArticleContext);
   const {
     articleType,
-    url,
+    articleUrl,
     headline,
     image,
     description,
@@ -13,7 +13,7 @@ export default function InputPanel(props) {
     authorName,
     publisherType,
     publisher,
-    publisherLogo,
+    publisherLogoURL,
     datePublished,
     dateModified,
     msg,
@@ -26,6 +26,12 @@ export default function InputPanel(props) {
     const { name, value } = event.target;
 
     props.updateArray(name, value, index);
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    props.updateSingle(name, value);
   };
 
   const handleClick = (event) => {
@@ -56,8 +62,8 @@ export default function InputPanel(props) {
               type="text"
               name={}
               value={}
-              onChange={}
-              onClick={}
+              onChange={handleChange}
+              onClick={handleClick}
               onBlur={}>input</input>
   
   
@@ -76,16 +82,40 @@ export default function InputPanel(props) {
             <option name="BlogPosting">BlogPosting</option>
           </select>
           <label>Article URL</label>
-          <input type="text" name="url" value={url} />
+          <input
+            type="text"
+            name="articleUrl"
+            value={articleUrl}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Headline</label>
-          <input type="text" name="headline" value={headline} />
-
-          <label>Image URL #1</label>
-          <input type="text" name="image" value={image} />
+          <input
+            type="text"
+            name="headline"
+            value={headline}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Description</label>
-          <input type="text" name="description" value={description} />
+          <input
+            type="text"
+            name="description"
+            value={description}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
+
+          <label>Image URL #1</label>
+          <input
+            type="text"
+            name="image"
+            value={image}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Author Type</label>
           <select value={authorType}>
@@ -94,19 +124,49 @@ export default function InputPanel(props) {
           </select>
 
           <label>Author Name</label>
-          <input type="text" name="authorName" value={authorName} />
+          <input
+            type="text"
+            name="authorName"
+            value={authorName}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Publisher</label>
-          <input type="text" name="publisher" value={publisher} />
+          <input
+            type="text"
+            name="publisher"
+            value={publisher}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Publisher Logo URL</label>
-          <input type="text" name="publisherLogo" value={publisherLogo} />
+          <input
+            type="text"
+            name="publisherLogoURL"
+            value={publisherLogoURL}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Date Published</label>
-          <input type="text" name="datePublished" value={datePublished} />
+          <input
+            type="text"
+            name="datePublished"
+            value={datePublished}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           <label>Date Modified</label>
-          <input type="text" name="dateModified" value={dateModified} />
+          <input
+            type="text"
+            name="dateModified"
+            value={dateModified}
+            onChange={handleChange}
+            onClick={handleClick}
+          />
 
           {/* {questions.map((question, index) => (
             <div className="FAQ" key={index}>
