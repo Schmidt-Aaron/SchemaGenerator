@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
-import InputPanel from "../components/articleInput";
-import OutputPanel from "../components/articleOutput";
+import InputPanel from "../components/article/articleInput";
+import OutputPanel from "../components/article/articleOutput";
 import Controls from "../components/controls";
-import About from "../components/aboutArticle";
+import About from "../components/article/aboutArticle";
 import { ArticleProvider } from "../context/article";
 import Banner from "../components/banner";
 import NavBar from "../components/nav";

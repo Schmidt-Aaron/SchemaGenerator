@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ArticleContext from "../context/article";
+import ArticleContext from "../../context/article";
 
 export default function InputPanel(props) {
   const context = useContext(ArticleContext);

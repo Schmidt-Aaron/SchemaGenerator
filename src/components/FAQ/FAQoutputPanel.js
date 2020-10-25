@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import FAQContext from "../context/FAQ";
+import FAQContext from "../../context/FAQ";
 
 const OutputPanel = React.forwardRef((props, ref) => {
   const context = useContext(FAQContext);

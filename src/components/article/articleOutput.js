@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import ArticleContext from "../context/article";
+import ArticleContext from "../../context/article";
 
 const OutputPanel = React.forwardRef((props, ref) => {
   const context = useContext(ArticleContext);

@@ -1,11 +1,12 @@
 import React, { useReducer } from "react";
-import InputPanel from "../components/FAQinputPanel";
-import OutputPanel from "../components/FAQoutputPanel";
+import InputPanel from "../components/FAQ/FAQinputPanel";
+import OutputPanel from "../components/FAQ/FAQoutputPanel";
 import Controls from "../components/controls";
-import About from "../components/aboutFAQ";
+import About from "../components/FAQ/aboutFAQ";
 import { FAQProvider } from "../context/FAQ";
 import Banner from "../components/banner";
 import NavBar from "../components/nav";
+// import reducer from "../utils/reducer";
 
 function FAQ() {
   const codeRef = React.createRef();

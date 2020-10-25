@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import SpecialAnnouncementContext from "../context/specialAnnouncement";
+import SpecialAnnouncementContext from "../../context/specialAnnouncement";
 
 export default function InputPanel(props) {
   const values = useContext(SpecialAnnouncementContext);

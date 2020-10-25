@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import FAQContext from "../context/FAQ";
+import FAQContext from "../../context/FAQ";
 
 export default function InputPanel(props) {
   const values = useContext(FAQContext);

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import SpecialAnnouncementContext from "../context/specialAnnouncement";
+import SpecialAnnouncementContext from "../../context/specialAnnouncement";
 
 const OutputPanel = React.forwardRef((props, ref) => {
   const context = useContext(SpecialAnnouncementContext);

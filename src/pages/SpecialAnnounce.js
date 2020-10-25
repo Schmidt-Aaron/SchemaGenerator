@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
-import InputPanel from "../components/SAinputPanel";
-import OutputPanel from "../components/SAoutputPanel";
+import InputPanel from "../components/SA/SAinputPanel";
+import OutputPanel from "../components/SA/SAoutputPanel";
 import Controls from "../components/controls";
-import About from "../components/aboutSA";
+import About from "../components/SA/aboutSA";
 import Banner from "../components/banner";
 import { SAProvider } from "../context/specialAnnouncement";
 import initialState from "../initialState/specialAnnouncement";
@@ -14,11 +14,11 @@ function SpecialAnnouncement() {
   // reducer to reset state
   const reducer = (state, action) => {
     switch (action.type) {
-      case "reset":
+      case "RESET":
         return {
           ...initialState,
         };
-      case "update":
+      case "UPDATE":
         return {
           ...state,
           [action.name]: action.value,
@@ -32,45 +32,45 @@ function SpecialAnnouncement() {
   // update function that can be passed into components
   const updateState = async (name, value) => {
     dispatch({
-      type: "update",
+      type: "UPDATE",
       name,
       value,
     });
     dispatch({
-      type: "update",
+      type: "UPDATE",
       name: "schema",
       value: codeRef.current.textContent,
     });
   };
 
   const resetState = () => {
-    dispatch({ type: "reset" });
+    dispatch({ type: "RESET" });
     console.log("reset");
   };
 
   const clearBanner = () => {
     setTimeout(() => {
-      dispatch({ type: "update", name: "msg", value: null });
-      dispatch({ type: "update", name: "error", value: null });
+      dispatch({ type: "UPDATE", name: "msg", value: null });
+      dispatch({ type: "UPDATE", name: "error", value: null });
     }, 2000);
   };
 
   const setBanner = async (msg) => {
     if (announcementData.schema === null) {
       dispatch({
-        type: "update",
+        type: "UPDATE",
         name: "msg",
         value: "Schema Not Copied. Update the input fields and try again.",
       });
       dispatch({
-        type: "update",
+        type: "UPDATE",
         name: "error",
         value: true,
       });
       console.log("Please enter valid schema data");
     } else {
       await dispatch({
-        type: "update",
+        type: "UPDATE",
         name: "msg",
         value: msg,
       });
