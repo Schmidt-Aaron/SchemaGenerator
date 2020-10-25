@@ -47,7 +47,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
         {articleUrl && (
           <div>
             <p className="indent-1">
-              <span className="type">{`"mainEntityOfPage`}</span>:{" {"}
+              <span className="type">{`"mainEntityOfPage"`}</span>:{" {"}
             </p>
             <p className="indent-2">
               <span className="type">{`"@type"`}</span>:{" "}
@@ -87,7 +87,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
         </p>
         <p className="indent-2">
           <span className="type">{`"@type"`}</span>:{" "}
-          <span className="value">{"Organization"},</span>
+          <span className="value">"Organization",</span>
         </p>
         <p className="indent-2">
           <span className="type">{`"name"`}</span>:{" "}
@@ -103,7 +103,7 @@ const OutputPanel = React.forwardRef((props, ref) => {
             </p>
             <p className="indent-3">
               <span className="type">{`"@type"`}</span>:{" "}
-              <span className="value">{"ImageObject"},</span>
+              <span className="value">"ImageObject",</span>
             </p>
             <p className="indent-3">
               <span className="type">{`"url"`}</span>:{" "}

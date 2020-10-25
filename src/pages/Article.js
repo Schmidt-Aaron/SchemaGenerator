@@ -11,12 +11,13 @@ function FAQ() {
   const codeRef = React.createRef();
 
   const initialState = {
-    articleType: ["Article", "NewsArticle", "BlogPosting"], // dropdown
-    articleUrl: null, // URL
+    articleType: "Article",
+    // articleType: ["Article", "NewsArticle", "BlogPosting"], // dropdown
+    articleUrl: "", // URL
     headline: "", // Text
     image: [{ id: 0, value: "" }], // optional, array
-    description: null, // optional, Text
-    authorType: ["Person", "Organization"], //dropdown
+    description: "", // optional, Text
+    authorType: "Person",
     authorName: "", // Text
     publisherType: "Organization", // is always org??
     publisher: "", // Text

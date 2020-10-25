@@ -76,10 +76,14 @@ export default function InputPanel(props) {
       <form>
         <div className="article">
           <label>Article Type</label>
-          <select value={articleType}>
-            <option name="Article">Article</option>
-            <option name="NewsArticle">NewsArticle</option>
-            <option name="BlogPosting">BlogPosting</option>
+          <select
+            value={articleType}
+            onChange={handleChange}
+            name="articleType"
+          >
+            <option>Article</option>
+            <option>NewsArticle</option>
+            <option>BlogPosting</option>
           </select>
           <label>Article URL</label>
           <input
@@ -108,19 +112,19 @@ export default function InputPanel(props) {
             onClick={handleClick}
           />
 
-          <label>Image URL #1</label>
+          {/* <label>Image URL #1</label>
           <input
             type="text"
             name="image"
-            value={image}
+            value={image[0].value}
             onChange={handleChange}
             onClick={handleClick}
-          />
+          /> */}
 
           <label>Author Type</label>
-          <select value={authorType}>
-            <option name="Person">Person</option>
-            <option name="Organization">Organization</option>
+          <select value={authorType} onChange={handleChange} name="authorType">
+            <option>Person</option>
+            <option>Organization</option>
           </select>
 
           <label>Author Name</label>
